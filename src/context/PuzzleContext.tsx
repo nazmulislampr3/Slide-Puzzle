@@ -17,7 +17,7 @@ type ContextType = {
   setUnit: any;
 };
 
-const PuzzleContext = createContext<ContextType>();
+const PuzzleContext = createContext<ContextType | null>(null);
 
 const PuzzleContextProvider = ({ children }: { children: ReactNode }) => {
   const [slices, setSlices] = useState<Slice[]>([]);
@@ -110,7 +110,7 @@ const PuzzleContextProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export const usePuzzleContext = (): ContextType => {
+export const usePuzzleContext = (): ContextType | null => {
   const context = useContext(PuzzleContext);
   return context;
 };

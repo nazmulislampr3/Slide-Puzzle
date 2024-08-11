@@ -5,7 +5,7 @@ const PuzzleSlice = ({ slice: { value, cIndex } }: { slice: Slice }) => {
   if (!value) {
     return;
   }
-  const { unit, moveSlice } = usePuzzleContext();
+  const { unit, moveSlice } = usePuzzleContext()!;
   const size = 100 / unit;
   const row = Math.ceil((cIndex + 1) / unit);
   const col = Math.ceil((cIndex + 1) % unit) || unit;
