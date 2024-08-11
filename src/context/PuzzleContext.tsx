@@ -32,7 +32,7 @@ const PuzzleContextProvider = ({ children }: { children: ReactNode }) => {
   const initialize = () => {
     let tempSlices: (number | null)[] = new Array(unit * unit - 1)
       .fill(null)
-      .map((v, index) => index + 1);
+      .map((_, index) => index + 1);
     tempSlices.push(null);
 
     let tempSlicesCopy = [...tempSlices];

@@ -3,7 +3,7 @@ import Solved from "./components/Solved";
 import { usePuzzleContext } from "./context/PuzzleContext";
 
 const App = () => {
-  const { setUnit, reset, solved } = usePuzzleContext();
+  const { setUnit, reset, solved } = usePuzzleContext()!;
   const levels = [
     {
       name: "Easy",
