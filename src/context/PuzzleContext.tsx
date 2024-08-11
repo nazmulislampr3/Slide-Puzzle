@@ -99,8 +99,6 @@ const PuzzleContextProvider = ({ children }: { children: ReactNode }) => {
     }
   }, [solved]);
 
-  console.log(slices);
-
   return (
     <PuzzleContext.Provider
       value={{ slices, reset, unit, moveSlice, setUnit, solved }}

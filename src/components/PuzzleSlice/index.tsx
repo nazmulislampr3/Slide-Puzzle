@@ -6,6 +6,7 @@ const PuzzleSlice = ({ slice: { value, cIndex } }: { slice: Slice }) => {
     return;
   }
   const { unit, moveSlice } = usePuzzleContext()!;
+  console.log(unit);
   const size = 100 / unit;
   const row = Math.ceil((cIndex + 1) / unit);
   const col = Math.ceil((cIndex + 1) % unit) || unit;
@@ -20,7 +21,15 @@ const PuzzleSlice = ({ slice: { value, cIndex } }: { slice: Slice }) => {
       }}
       onClick={() => moveSlice(cIndex)}
     >
-      <span className="text-7xl md:text-8xl font-bold text-gray-300">
+      <span
+        className={`font-bold text-gray-300 ${
+          unit === 3
+            ? "text-5xl md:text-7xl"
+            : unit === 4
+            ? "text-4xl md:text-6xl"
+            : "text-3xl md:text-5xl"
+        }`}
+      >
         {value}
       </span>
     </div>
